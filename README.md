@@ -3,9 +3,8 @@
 This is a simple little project to speed up (and ideally automate) the uploading of hymns to the PlayHymns DB.
 
 There are three things that I have to do each week to make sure the hymns are up, once I have recorded them:
--	upload them to Amazon S3, ensuring to follow the expected naming convention and directory structure
+-	upload them to Amazon S3, ensuring to follow the expected naming convention and directory structure I've defined in the PlayHymns database
 -	find the lyrics to the hymn online somewhere
--	mark the new directory and its contents public
 - 	update the DB with one more week in the 'Week' table and new hymn entries (if they are not already in the 'Hymn' table)
 
 I thought about making a simple android app, since I'll be uploading the hymns from my phone, but a web endpoint would be more useful, and with Bootstrap, I can make it look pretty on mobile as well as standard screen sizes.
@@ -16,4 +15,4 @@ In order to upload the lyrics, I'm hoping to find a hymn website with a predicta
 
 And for updating the DB, I'm sure I can do that from within JavaScript, right?
 
-Not sure where to host. It'll just be me uploading the hymns for the forseeable future.
+Not sure where to host. It'll just be me uploading the hymns for the forseeable future, so I'll use S3 for now.
