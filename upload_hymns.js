@@ -2,6 +2,14 @@
 //I have no idea what I'm doing, however, so I'm just pasting code here for 
 //now
 
+
+//maybe authenticating with amazon is better?
+AWS.config.credentials = new AWS.WebIdentityCredentials({
+  RoleArn: 'arn:aws:iam::<AWS_ACCOUNT_ID>:role/<WEB_IDENTITY_ROLE_NAME>',
+  ProviderId: 'www.amazon.com',
+  WebIdentityToken: ACCESS_TOKEN
+});
+
 //I chose to authenticate with Facebook, so...
 FB.login(function (response) {
   if (response.authResponse) { // logged in
@@ -46,31 +54,9 @@ dataset.synchronize(new DefaultSyncCallback() {
 
 // Once auth is out of the way, (see here: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#createMultipartUpload-property)
 var params = {
-  Bucket: 'STRING_VALUE', /* required */
-  Key: 'STRING_VALUE', /* required */
-  ACL: 'private | public-read | public-read-write | authenticated-read | bucket-owner-read | bucket-owner-full-control',
-  CacheControl: 'STRING_VALUE',
-  ContentDisposition: 'STRING_VALUE',
-  ContentEncoding: 'STRING_VALUE',
-  ContentLanguage: 'STRING_VALUE',
-  ContentType: 'STRING_VALUE',
-  Expires: new Date || 'Wed Dec 31 1969 16:00:00 GMT-0800 (PST)' || 123456789,
-  GrantFullControl: 'STRING_VALUE',
-  GrantRead: 'STRING_VALUE',
-  GrantReadACP: 'STRING_VALUE',
-  GrantWriteACP: 'STRING_VALUE',
-  Metadata: {
-    someKey: 'STRING_VALUE',
-    /* anotherKey: ... */
-  },
-  RequestPayer: 'requester',
-  SSECustomerAlgorithm: 'STRING_VALUE',
-  SSECustomerKey: new Buffer('...') || 'STRING_VALUE',
-  SSECustomerKeyMD5: 'STRING_VALUE',
-  SSEKMSKeyId: 'STRING_VALUE',
-  ServerSideEncryption: 'AES256 | aws:kms',
-  StorageClass: 'STANDARD | REDUCED_REDUNDANCY | LT',
-  WebsiteRedirectLocation: 'STRING_VALUE'
+  Bucket: 'testforplayhymns', /* required */
+  Key: 'hymnsFS/test_folder/file.m4a', /* required */
+  ACL: 'public-read-write',
 };
 s3.createMultipartUpload(params, function(err, data) {
   if (err) console.log(err, err.stack); // an error occurred
