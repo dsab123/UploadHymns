@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	// this is gonne be the most complicated function...
+	// if hymn1 clicked, do a fade in from top
 	$('li[class^="list"]').on("click", function() {
 		var whichActive = $(this).parent().find(".active");
 		
@@ -11,6 +13,10 @@ $(document).ready(function() {
 			$('#hymn-info').fadeIn("fast");
 		}
 	});	
+	
+	$('.list-hymn3', '.row3').on("click"), function() {
+		alert("hello");
+	});
 	
 	function selectHymn(text) {
 		alert("hello");
