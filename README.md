@@ -16,3 +16,7 @@ In order to upload the lyrics, I'm hoping to find a hymn website with a predicta
 And for updating the DB, I'm sure I can do that from within JavaScript, right?
 
 Not sure where to host. It'll just be me uploading the hymns for the forseeable future, so I'll use S3 for now.
+
+##todo:
+- figure out how to change the color of the filestyle bootstrap input
+- add Spring for backend processing awesomeness, which will include DB calls and stuff
