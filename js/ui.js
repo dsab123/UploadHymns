@@ -1,26 +1,24 @@
 $(document).ready(function() {
-	$('[class^="list"]', '.hymn-cols').on("click", function() {
+	$('li[class^="list"]').on("click", function() {
 		var whichActive = $(this).parent().find(".active");
-
-		alert("hello!");
 		
-		$(this).parent().find(".active").removeClass("active");
+		whichActive.removeClass("active");
 		$(this).addClass("active");
-
-		retrieveHymn($(this).first().text());
-
+		
 		if ($(this).is(whichActive)) {
 			unselectHymn();
 		} else {
-			$('#hymn-div').fadeIn("fast");
-			$('#hymn-lyrics').fadeIn("fast");
+			$('#hymn-info').fadeIn("fast");
 		}
-	})	
+	});	
+	
+	function selectHymn(text) {
+		alert("hello");
+	}
 	
 	function unselectHymn() {
 		$('.active').removeClass('active');
-		$('#hymn-div').fadeOut("fast");
-		$('#hymn-lyrics').fadeOut("fast");
+		$('#hymn-info').fadeOut("fast");
 	}
 
 	$(function() {
