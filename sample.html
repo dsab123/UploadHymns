@@ -1,67 +1,75 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>UploadHymns</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.12.min.js"></script>
+<html lang="en">
+<head>
+<title>UploadHymns</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.42.min.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/bootstrap-filestyle.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-		<script src="upload_hymns.js"></script>
-		<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.42.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	</head>
+<!-- for the datepicker -->
+<link rel="stylesheet" href="css/jquery-bootstrap-datepicker.css">
+<!-- for the fonts -->
+<link rel="stylesheet" href="css/extras.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
 <body>
 
-        <div class="container">
-                <div class="span12">
-                        <div class="jumbotron">
-                                <h1>UploadHymns!</h1>
-                                <p>Choose which Sunday's hymns you'd like to view.</p>
-                                <div class="col-sm-12 text-right">
-                                        <a id="github-icon" href="https://github.com/dsab123/PlayHymn3" target="_blank"><img src="github-icon.png"></a>
-                                </div>  
-                        </div>
-                </div>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>UploadHymns!</h1>
+			<div class="col-sm-12 text-right">
+				<a id="github-icon" href="https://github.com/dsab123/PlayHymn3"
+					target="_blank"><img src="github-icon.png"></a>
+			</div>
+		</div>
 	</div>
 
-<div class="container">
-	<div class="row">
-			<div class="col-xs-2">
+	<div class="container">
+		<div class="datepicker-row text-left">
+			<h3>
+				For the week of: <input type="text" class="datepicker well well-sm" placeholder="MM/DD/YYYY">
+			</h3>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-2 hymn-cols">
 				<ul class="nav nav-pills nav-stacked">
-					<li role="presentation" class="list-hymn1"><a
-						id="hymn1-text" href="#">Hymn 1</a></li>
-					<li role="presentation" class="list-hymn2"><a
-						id="hymn2-text" href="#">Hymn 2</a></li>
-					<li role="presentation" class="list-hymn3"><a
-						id="hymn3-text" href="#">Hymn 3</a></li>
+					<li role="presentation" class="list-hymn1"><a id="hymn1-text"
+						href="#">Hymn 1</a></li>
+					<li role="presentation" class="list-hymn2"><a id="hymn2-text"
+						href="#">Hymn 2</a></li>
+					<li role="presentation" class="list-hymn3"><a id="hymn3-text"
+						href="#">Hymn 3</a></li>
 				</ul>
 			</div>
-			<div class="col-xs-4">
-				<div id="hymn-div" style="display: none;">
-					<p id="hymn-name"></p>
-					<p id="hymn-number"></p>
-					<audio id="audioBar" controls>
-						<source src="" id="hymn-uri-mp3" type="audio/mp3">
-						<source src="" id="hymn-uri-ogg" type="audio/ogg">
-					</audio>
-				</div>
-			</div>
 
-			<div class="col-xs-4">
-				<div class="lyrics-div">
-					<textarea id="hymn-lyrics" rows="20" cols="60" style="resize: none; display: none;"></textarea>
+			<div id="hymn-info">
+				<div class="col-xs-5">
+					<input type="text" id="hymn-name" class="well well-sm max-width"
+						placeholder="Praise My Soul, The King Of Heaven"> <input
+						type="text" id="hymn-number" class="well well-sm max-width"
+						placeholder="53"> 	
+					<input type="file"
+						class="hymn-audio btn btn-default filestyle well well-sm max-width"
+						data-placeholder="audio.mp3" data-icon="false" data-buttonBefore="true">
+				</div>
+
+				<div class="col-xs-5">
+					<div id="hymn-lyrics">
+						<textarea id="hymn-lyrics" class="well well-sm max-width" rows="25" placeholder="lyrics"></textarea>
+					</div>
 				</div>
 			</div>
 		</div>
-
-
-</div>
-
-
-
-
-
+	</div>
 <body>
-
