@@ -55,17 +55,17 @@ $(document).ready(function() {
 
 	$.fn.fadeInSlideDown = function() {
 		this.stop(true).fadeIn({
-			duration: 1000,
+			duration: 500,
 			queue: false
-		}).css('display', 'none').slideDown(1000);
+		}).css('display', 'none').slideDown(500);
 	};
 
 
 	$.fn.fadeOutSlideUp = function() {
 		this.stop(true).fadeOut({
-			duration: 1000,
+			duration: 500,
 			queue: false
-		}).slideUp(1000);
+		}).slideUp(500);
 	};
 
 
