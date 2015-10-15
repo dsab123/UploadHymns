@@ -8,10 +8,7 @@ $(document).ready(function() {
 
 			$('#hymn-info1').fadeInSlideDown();
 
-			$('#hymn-info2').fadeOutSlideUp();
-			$('#hymn-info2').removeClass("active");
-			$('#hymn-info3').fadeOutSlideUp();
-			$('#hymn-info3').removeClass("active");
+			$(".row-1").siblings().children("div[id^='hymn-info']").removeClass("active").fadeOutSlideUp();
 		} else {
 			$('#hymn-info1').fadeOutSlideUp();
 		}
@@ -22,14 +19,9 @@ $(document).ready(function() {
 		$('#hymn-info2').toggleClass("active");
 
 		if ($('#hymn-info2').hasClass("active")) {
-			$('#hymn-info1').fadeOutSlideUp();
-			$('#hymn-info1').removeClass("active");
-
 			$('#hymn-info2').fadeInSlideDown();
 
-
-			$('#hymn-info3').fadeOutSlideUp();
-			$('#hymn-info3').removeClass("active");
+			$(".row-2").siblings().children("div[id^='hymn-info']").removeClass("active").fadeOutSlideUp();
 		} else {
 			$('#hymn-info2').fadeOutSlideUp();
 		}
@@ -40,13 +32,9 @@ $(document).ready(function() {
 		$('#hymn-info3').toggleClass("active");
 
 		if ($('#hymn-info3').hasClass("active")) {
-			$('#hymn-info1').fadeOutSlideUp();
-			$('#hymn-info1').removeClass("active");
-			$('#hymn-info2').fadeOutSlideUp();
-			$('#hymn-info2').removeClass("active");
-
 			$('#hymn-info3').fadeInSlideDown();
 
+			$(".row-3").siblings().children("div[id^='hymn-info']").removeClass("active").fadeOutSlideUp();
 		} else {
 			$('#hymn-info3').fadeOutSlideUp();
 		}
@@ -68,15 +56,6 @@ $(document).ready(function() {
 		}).slideUp(500);
 	};
 
-
-	function selectHymn(text) {
-		alert("hello");
-	}
-
-	function unselectHymn() {
-		$('.active').removeClass('active');
-		$('#hymn-info').fadeOut("fast");
-	}
 
 	$(function() {
 		$( ".datepicker" ).datepicker({
