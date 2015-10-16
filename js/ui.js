@@ -2,9 +2,6 @@ $(document).ready(function() {
 	// this is gonne be the most complicated function...
 	// if hymn1 clicked, do a fade in from top
 	$('li[class^="list-hymn"]').on("click", function() {
-		event.preventDefault();
-		event.stopPropagation();
-
 		var closestHymnInfo$ = $(this).closest('div.row').find('div[id^="hymn-info"]');
 		
 		closestHymnInfo$.toggleClass("active");
@@ -17,6 +14,9 @@ $(document).ready(function() {
 		} else {
 			closestHymnInfo$.fadeOutSlideUp();
 		}
+
+		// returning false from event handler in jQuery is the same as event.stopPropagation() and event.preventDefault()		
+		return false;
 	});
 
 	$.fn.fadeInSlideDown = function() {
