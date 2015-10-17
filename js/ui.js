@@ -37,7 +37,8 @@ $(document).ready(function() {
 		$( ".datepicker" ).datepicker({
 			showOtherMonths: true,
 			selectOtherMonths: true,
-			beforeShowDay: enableSUNDAYS
+			beforeShowDay: enableSUNDAYS,
+			dateFormat: 'mm-dd-yy'
 		});
 	});
 
