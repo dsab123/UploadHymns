@@ -13,11 +13,11 @@
         var appId = '527169160766341';
         var roleArn = 'arn:aws:iam::959456519816:role/playHymns_uploader_role';
         var bucketName = 'uploadhymns';
-        AWS.config.region = 'us-west-2';
+        AWS.config.region = 'us-east-1';
         var fbUserId;
         var bucket = new AWS.S3({
             params: {
-                Bucket: bucketName
+                Bucket: testforplayhymns
             }
         });
 
@@ -63,6 +63,7 @@
                 }
             });
         }
+
         /*!
          * Login to your application using Facebook.
          * Uses the Facebook SDK for JavaScript available here:

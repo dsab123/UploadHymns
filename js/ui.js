@@ -34,7 +34,7 @@ $(document).ready(function() {
 	};
 
 	$(function() {
-		$( ".datepicker" ).datepicker({
+		$(".datepicker").datepicker({
 			showOtherMonths: true,
 			selectOtherMonths: true,
 			beforeShowDay: enableSUNDAYS,
@@ -46,5 +46,9 @@ $(document).ready(function() {
 		var day = date.getDay();
 		return [(day == 0), ''];
 	}
+	
+	$(function() {
+		$("#upload-button").click()
+	})
 
 });

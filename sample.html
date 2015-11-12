@@ -3,13 +3,16 @@
 <head>
 <title>UploadHymns</title>
 <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.42.min.js"></script>
-<script src="js/ui.js"></script>
-<script src="js/bootstrap-filestyle.min.js"></script>
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
+	defer></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" defer></script>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.42.min.js" defer></script>
+<script src="js/ui.js" defer></script>
+<script src="js/bootstrap-filestyle.min.js" defer></script>
 <script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"
+	defer></script>
+<script src="js/aws.js" defer></script>
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -35,11 +38,20 @@
 	</div>
 
 	<div class="container">
-		<div class="datepicker-row text-left">
-			<h3>
-				For the week of: <input type="text" class="datepicker well well-sm"
-					placeholder="MM-DD-YYYY">
-			</h3>
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="datepicker-row text-left">
+					<h3>
+						For the week of: <input type="text"
+							class="datepicker well well-sm" placeholder="MM-DD-YYYY">
+					</h3>
+				</div>
+			</div>
+			<div class="col-xs-6 text-right">
+				<h3>
+					<button id="upload-button" class="btn btn-group btn-default btn-lg">Upload!</button>
+				</h3>
+			</div>
 		</div>
 
 		<div class="row row-1">
@@ -53,12 +65,12 @@
 			<div id="hymn-info1" class="col-xs-10" style="display: none;">
 				<div class="col-xs-6">
 					<input type="text" id="hymn-name" class="well well-sm max-width"
-						placeholder="Praise My Soul, The King Of Heaven"> <input
+						placeholder="Praise My Soul, The King Of Heaven"></input> <input
 						type="text" id="hymn-number" class="well well-sm max-width"
-						placeholder="53"> <input type="file"
+						placeholder="53"></input> <input type="file"
 						class="hymn-audio btn btn-default filestyle well well-sm max-width"
 						data-placeholder="audio.mp3" data-icon="false"
-						data-buttonBefore="true">
+						data-buttonBefore="true"></input>
 				</div>
 				<div class="col-xs-6">
 					<div id="hymn-lyrics">
@@ -68,7 +80,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="row row-2">
 			<div class="col-xs-2 hymn-cols">
 				<ul class="nav nav-pills nav-stacked">
@@ -94,7 +106,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="row row-3">
 			<div class="col-xs-2 hymn-cols">
 				<ul class="nav nav-pills nav-stacked">
@@ -120,6 +132,6 @@
 				</div>
 			</div>
 		</div>
-		
+
 	</div>
 <body>
